@@ -259,7 +259,7 @@ def main():
 
     root = tk.Tk()
     '''--------- Window Customization --------'''
-    newTitle = "AOS v1.0 - preset : " + titleWithPreset
+    newTitle = "OMR Evaluator by Kishlay and Ashish under Prof. Ashutosh Parida" + titleWithPreset
     titleWithPreset = newTitle
     root.title(titleWithPreset)
     root.geometry("1000x600+50+50")

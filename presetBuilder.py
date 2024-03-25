@@ -78,7 +78,7 @@ def handleDetection(img,doCanvas,ce1Value=70,ce2Value=20,blurValue=17):
         gImageDetected = img_detected
         displayImage(img_detected,doCanvas,[img_detected.shape[1],img_detected.shape[0]])
     except Exception as e:
-        messagebox.showerror("Try again","No OMR was detected in the image. Please try changing the settings or open a different image.")
+        messagebox.showerror("Configure Settings to detect OMR")
         print(e)
 
 def onLeftDrag(event):
@@ -407,7 +407,7 @@ def main(img):
     global root,ogCanvas,doCanvas,gImage,ce1Slider,ce2Slider,blurSlider,batchesCanvas
     gImage = img
     root = tk.Tk()
-    root.title("Preset Builder")
+    root.title("OMR Evaluator by Kishlay and Ashish under Prof. Ashutosh Parida")
     root.geometry("1200x600+50+50")
     root.focus_force()
 

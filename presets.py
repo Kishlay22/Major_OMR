@@ -14,39 +14,11 @@ aColumn = 0
 fileContent = []
 deletedPresetList = []
 
-'''Preset Argument Syntax
-On Save Button Click :
-    1) Name
-    2) Description
-    10) Actual OMR's size.X
-    11) Actual OMR's size.Y
-Entry 1 :
-    3) First Question X
-    4) First Question Y
-    5) X Difference
-    6) Y Difference
-    7) Total MCQs To Scan
-+ Button For Multiple Entries
+def myportfolio():
+    webbrowser.open_new('https://kishlaykumar.me')
 
-Image Tweaking :
-    7) Canny Edge Parameter 1
-    8) Canny edge parameter 2
-    9) Guassian Blur parameter
-
-Final Saving Syntax :
-    name $ description $ actual omr.size.X $ actual omr.size.Y $ canny edge parameter 1 $ canny edge parameter 2 $ guassian blur parameter 
-    $ total number of batches $ [batch 1 parameteres] $ [batch 2 parameters]....
-
-    [batch 1] = [total Mcqs to scan, first-x, first-y, x difference, y difference]
-
-    note : Final saving will not have space around '$'. This is just for decoration.
-'''
-
-def watchTutorial():
-    webbrowser.open_new('http://bit.ly/aosTutorial')
-
-def openDocumentation():
-    webbrowser.open_new('http://bit.ly/aosDocuments')
+def openprojectrecord():
+    webbrowser.open_new('#')
 
 def filename(fp):
     fn = fp.split('/')
@@ -117,10 +89,6 @@ def buildNewPresetButton():
     global aRow,aColumn,rootCanvas
     aRow = 0
     aColumn = 0
-    
-    #RowConfigures
-    #rootCanvas.grid_columnconfigure(aColumn, weight=1)
-    #rootCanvas.grid_rowconfigure(aRow, weight=1)
 
     newPresetFrame = tk.LabelFrame(rootCanvas,text="New Preset",width=100,height=100,padx=10,pady=5)
     newPresetFrame.grid(row=aRow,column=aColumn,sticky=tk.N+tk.S+tk.E+tk.W,padx=10,pady=5)
@@ -207,7 +175,7 @@ def buildAll():
 def main():
     global root,rootCanvas
     root = tk.Tk()
-    root.title("Presets - AOS v1.0")
+    root.title("OMR Evaluator by Kishlay and Ashish under Prof. Ashutosh Parida")
     root.geometry("900x500+100+100")
     root.focus_force()
 
@@ -215,9 +183,9 @@ def main():
     menubar = tk.Menu(root)
     #file menu
     filemenu = tk.Menu(menubar,tearoff=0)
-    filemenu.add_command(label="Watch Tutorial",command=watchTutorial)
-    filemenu.add_command(label="Open Documentation",command=openDocumentation)
-    menubar.add_cascade(label="Help",menu=filemenu)
+    filemenu.add_command(label="My Portfolio",command=myportfolio)
+    filemenu.add_command(label="Open Project Record",command=openprojectrecord)
+    menubar.add_cascade(label="Click here to explore Documentation",menu=filemenu)
     root.config(menu=menubar)
     
     rootCanvas = tk.Canvas(root)
